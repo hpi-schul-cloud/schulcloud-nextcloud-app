@@ -1,0 +1,13 @@
+name: Run Nextcloud Tests
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2
+      - name: Start tests
+        run: |
+          echo Hello World
+        working-directory: ${{env.working-directory}}

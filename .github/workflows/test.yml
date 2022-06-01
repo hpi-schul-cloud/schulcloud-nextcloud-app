@@ -1,0 +1,17 @@
+name: Run Nextcloud Tests
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2
+      - name: Build environment
+        env:
+          DOCKER_BUILDKIT: 1
+        run: docker-compose -p schulcloud-nextcloud-tests -f compose-tests.yml up --build -d
+      - name: Start tests
+        run: |
+          echo Hello World
+        working-directory: ${{env.working-directory}}

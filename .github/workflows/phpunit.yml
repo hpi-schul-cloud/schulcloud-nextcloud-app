@@ -4,7 +4,7 @@ on: [push]
 
 env:
   APP_NAME: schulcloud
-  NEXTCLOUD_VERSION: 24
+  NEXTCLOUD_VERSION: v24.0.0
 
 jobs:
   pgsql:

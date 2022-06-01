@@ -4,8 +4,9 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fd73af66e6a743c8692adcf2ae1b360f",
-    "packages": [
+    "content-hash": "e787291bd02dc7e8842843d3bc66ea7b",
+    "packages": [],
+    "packages-dev": [
         {
             "name": "christophwurst/nextcloud",
             "version": "v24.0.0",
@@ -2324,7 +2325,6 @@
             "type": "library"
         }
     ],
-    "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": [],

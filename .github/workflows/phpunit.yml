@@ -4,6 +4,7 @@ on: [push]
 
 env:
   APP_NAME: schulcloud
+  NEXTCLOUD_VERSION: 24
 
 jobs:
   pgsql:
@@ -34,7 +35,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: nextcloud/server
-          ref: ${{ env.GITHUB_BASE_REF }}
+          ref: ${{ env.NEXTCLOUD_VERSION }}
 
       - name: Checkout submodules
         shell: bash

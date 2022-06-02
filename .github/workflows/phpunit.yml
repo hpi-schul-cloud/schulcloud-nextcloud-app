@@ -58,12 +58,8 @@ jobs:
           coverage: none
 
       - name: Set up PHPUnit
-        uses: nick-fields/retry@v2.7.0
-        with:
-          timeout_minutes: 10
-          retry_wait_seconds: 20
-          max_attempts: 4
-          command: cd apps/${{ env.APP_NAME }} && composer i
+        working-directory: apps/${{ env.APP_NAME }}
+        run: composer i
 
       - name: Set up Nextcloud
         env:

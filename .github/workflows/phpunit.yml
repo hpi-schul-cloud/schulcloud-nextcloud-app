@@ -61,6 +61,7 @@ jobs:
         uses: nick-fields/retry@v2.7.0
         with:
           timeout_minutes: 10
+          retry_wait_seconds: 20
           max_attempts: 4
           command: cd apps/${{ env.APP_NAME }} && composer i
 

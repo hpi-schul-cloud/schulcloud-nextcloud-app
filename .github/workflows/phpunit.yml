@@ -1,6 +1,6 @@
 name: PHPUnit
 
-on: [push]
+on: [ push ]
 
 env:
   APP_NAME: schulcloud
@@ -14,10 +14,11 @@ jobs:
       # do not stop on another job's failure
       fail-fast: false
       matrix:
-        php-versions: ['7.4']
-        databases: ['pgsql']
+        php-versions: [ '8.1' ]
+        databases: [ 'pgsql' ]
+        testtype: [ 'unit', 'integration' ]
 
-    name: php${{ matrix.php-versions }}-${{ matrix.databases }}
+    name: php${{ matrix.php-versions }}-${{ matrix.databases }}-${{ matrix.testtype }}
 
     services:
       postgres:
@@ -72,4 +73,4 @@ jobs:
           php -S localhost:8080 &
       - name: PHPUnit unit tests
         working-directory: apps/${{ env.APP_NAME }}
-        run: ./vendor/phpunit/phpunit/phpunit -c tests/phpunit.xml --testsuite unit
+        run: ./vendor/bin/phpunit -c tests/phpunit.xml --testdox --testsuite ${{ matrix.testtype }}

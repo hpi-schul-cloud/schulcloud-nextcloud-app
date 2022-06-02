@@ -61,8 +61,7 @@ jobs:
         uses: nick-fields/retry@v2.7.0
         with:
           max_attempts: 4
-          working-directory: apps/${{ env.APP_NAME }}
-          command: composer i
+          command: cd apps/${{ env.APP_NAME }} && composer i
 
       - name: Set up Nextcloud
         env:

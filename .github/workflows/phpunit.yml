@@ -58,10 +58,10 @@ jobs:
           coverage: none
 
       - name: Set up PHPUnit
-        working-directory: apps/${{ env.APP_NAME }}
         uses: nick-fields/retry@v2.7.0
         with:
           max_attempts: 4
+          working-directory: apps/${{ env.APP_NAME }}
           command: composer i
 
       - name: Set up Nextcloud

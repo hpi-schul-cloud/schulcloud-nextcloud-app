@@ -58,8 +58,14 @@ jobs:
           coverage: none
 
       - name: Set up PHPUnit
+        id: composer-install
         working-directory: apps/${{ env.APP_NAME }}
         run: composer i
+        continue-on-error: true
+
+      - name: Retry set up PHPUnit
+        if: steps.composer-install.outcome=='failure'
+        run: composer clear-cache && composer i
 
       - name: Set up Nextcloud
         env:

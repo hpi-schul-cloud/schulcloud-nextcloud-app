@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f4551de26a30fa0d3c8e55183acff815",
+    "content-hash": "e787291bd02dc7e8842843d3bc66ea7b",
     "packages": [],
     "packages-dev": [
         {
@@ -178,6 +178,20 @@
                 }
             ],
             "time": "2022-03-03T13:19:32+00:00"
+        },
+        {
+            "name": "nextcloud/groupfolders",
+            "version": "12",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nextcloud/groupfolders.git",
+                "reference": "tags/12.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://codeload.github.com/nextcloud/groupfolders/zip/refs/tags/v12.0.0"
+            },
+            "type": "library"
         },
         {
             "name": "nikic/php-parser",
@@ -2295,6 +2309,20 @@
                 "source": "https://github.com/webmozarts/assert/tree/1.10.0"
             },
             "time": "2021-03-09T10:59:23+00:00"
+        },
+        {
+            "name": "zorn-v/nextcloud-social-login",
+            "version": "4.15.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zorn-v/nextcloud-social-login.git",
+                "reference": "tags/4.15.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://codeload.github.com/zorn-v/nextcloud-social-login/zip/refs/tags/v4.15.2"
+            },
+            "type": "library"
         }
     ],
     "aliases": [],

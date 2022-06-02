@@ -71,6 +71,6 @@ jobs:
           ./occ app:install sociallogin
           ./occ app:install groupfolders
           php -S localhost:8080 &
-      - name: PHPUnit unit tests
+      - name: PHPUnit ${{ matrix.testtype }} tests
         working-directory: apps/${{ env.APP_NAME }}
         run: ./vendor/bin/phpunit -c tests/phpunit.xml --testdox --testsuite ${{ matrix.testtype }}

@@ -60,6 +60,7 @@ jobs:
       - name: Set up PHPUnit
         uses: nick-fields/retry@v2.7.0
         with:
+          timeout_minutes: 10
           max_attempts: 4
           command: cd apps/${{ env.APP_NAME }} && composer i
 

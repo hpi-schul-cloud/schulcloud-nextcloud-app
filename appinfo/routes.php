@@ -9,6 +9,7 @@
  */
 return [
     'routes' => [
-        ['name' => 'logout#logout', 'url' => '/logout', 'verb' => 'GET']
+        ['name' => 'Logout#logout', 'url' => '/logout', 'verb' => 'GET'],
+        ['name' => 'GroupFolders#getFolderByGroupId', 'url' => '/groupfolders/folders/group/{gid}', 'verb' => 'GET']
     ]
 ];

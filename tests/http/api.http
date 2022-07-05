@@ -1,0 +1,14 @@
+# front-channel logout
+GET http://nextcloud.localhost:9090/apps/schulcloud/logout
+accept: application/json
+ocs-apirequest: true
+authorization: Basic YWRtaW46YWRtaW4=
+
+###
+
+# get groupfolder by group id (gid: admin)
+GET http://nextcloud.localhost:9090/apps/schulcloud/groupfolders/folders/group/admin
+accept: application/json
+ocs-apirequest: true
+authorization: Basic YWRtaW46YWRtaW4=
+

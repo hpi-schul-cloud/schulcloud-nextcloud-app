@@ -12,3 +12,4 @@ This App is used to implement requirements of the dBildungscloud for Nextcloud.
 ## API
 
 - `GET apps/schulcloud/logout`: front-channel logout
+- `GET apps/schulcloud/groupfolders/folders/group/{gid}`: find a groupfolder by a given group id

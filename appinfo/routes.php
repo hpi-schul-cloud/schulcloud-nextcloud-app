@@ -10,6 +10,7 @@
 return [
     'routes' => [
         ['name' => 'Logout#logout', 'url' => '/logout', 'verb' => 'GET'],
+        ['name' => 'Logout#getAppPassword', 'url' => '/apppassword', 'verb' => 'GET'],
         ['name' => 'GroupFolders#getFolderByGroupId', 'url' => '/groupfolders/folders/group/{gid}', 'verb' => 'GET']
     ]
 ];

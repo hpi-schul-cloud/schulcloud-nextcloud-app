@@ -11,7 +11,6 @@ class DependencyManager {
      * @throws DomainException
      */
    public static function checkDependencies(): void {
-      self::checkAppDependency('sociallogin');
       self::checkAppDependency('groupfolders');
 
       self::checkClassDependency('OCA\GroupFolders\Folder\FolderManager');

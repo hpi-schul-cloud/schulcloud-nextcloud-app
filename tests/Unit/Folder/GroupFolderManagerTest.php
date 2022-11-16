@@ -9,7 +9,7 @@ use OCP\ILogger;
 
 use OCA\GroupFolders\Folder\FolderManager;
 
-use OCA\Schulcloud\Helper\GroupFolderName;
+use OCA\Schulcloud\Helper\GroupFolder;
 use OCA\Schulcloud\Folder\GroupFolderManager;
 
 class GroupFolderManagerTest extends TestCase {
@@ -37,7 +37,7 @@ class GroupFolderManagerTest extends TestCase {
 
         $this->testUser = $this->createMock(IUser::class);
 
-        $this->testFolderName = GroupFolderName::make(self::testGroupId, self::testGroupName);
+        $this->testFolderName = GroupFolder::make(self::testGroupId, self::testGroupName);
 
         $this->logger = $this->createMock(ILogger::class);
 
@@ -55,7 +55,7 @@ class GroupFolderManagerTest extends TestCase {
         $this->folderManager->expects($this->once())
             ->method('addApplicableGroup')
             ->with($this->equalTo(self::testFolderId), $this->equalTo(self::testGroupId));
-        
+
         $this->logger->expects($this->once())
             ->method('info');
 
@@ -79,10 +79,10 @@ class GroupFolderManagerTest extends TestCase {
         $this->folderManager->expects($this->once())
             ->method('renameFolder')
             ->with(self::testFolderId, $this->testFolderName);
-        
+
         $this->logger->expects($this->once())
             ->method('info');
-            
+
         $this->gfManager->renameFoldersOfUser($this->testUser);
     }
 }

@@ -11,22 +11,7 @@ class DependencyManager {
      * @throws DomainException
      */
    public static function checkDependencies(): void {
-      self::checkAppDependency('groupfolders');
-
       self::checkClassDependency('OCA\GroupFolders\Folder\FolderManager');
-   }
-
-
-    /**
-     * Checks if an app is installed and enabled
-     * @param string $name app id
-     * @return void
-     * @throws DomainException if app is not enabled
-     */
-   public static function checkAppDependency(string $name): void {
-      if(!\OCP\App::isEnabled($name)) {
-         throw new DomainException("App '$name' is not enabled, but it is a required dependency.");
-      }
    }
 
     /**

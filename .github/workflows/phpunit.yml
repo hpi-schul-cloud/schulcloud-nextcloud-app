@@ -4,7 +4,7 @@ on: [ push ]
 
 env:
   APP_NAME: schulcloud
-  NEXTCLOUD_VERSION: v24.0.0
+  NEXTCLOUD_VERSION: v26.0.0
 
 permissions:
   contents: read
@@ -17,7 +17,7 @@ jobs:
       # do not stop on another job's failure
       fail-fast: false
       matrix:
-        php-versions: [ '8.1' ]
+        php-versions: [ '8.2' ]
         databases: [ 'pgsql' ]
         testtype: [ 'unit', 'integration' ]
 

@@ -8,7 +8,7 @@ use OCP\AppFramework\Bootstrap\IRegistrationContext;
 use OCP\Group\Events\GroupCreatedEvent;
 use OCP\User\Events\PostLoginEvent;
 use OCP\IContainer;
-use OCP\ILogger;
+use Psr\Log\LoggerInterface;
 
 use OCA\GroupFolders\Folder\FolderManager;
 
@@ -32,7 +32,7 @@ class Application extends App implements IBootstrap {
       $context->registerService(GroupFolderManager::class, function(IContainer $c){
          return new GroupFolderManager(
             $c->get(FolderManager::class),
-            $c->get(ILogger::class)
+            $c->get(LoggerInterface::class)
          );
       });
 

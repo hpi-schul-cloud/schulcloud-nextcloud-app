@@ -5,7 +5,7 @@ use PHPUnit\Framework\TestCase;
 
 use OCP\IUser;
 use OCP\IGroup;
-use OCP\ILogger;
+use Psr\Log\LoggerInterface;
 
 use OCA\GroupFolders\Folder\FolderManager;
 
@@ -39,7 +39,7 @@ class GroupFolderManagerTest extends TestCase {
 
         $this->testFolderName = GroupFolderName::make(self::testGroupId, self::testGroupName);
 
-        $this->logger = $this->createMock(ILogger::class);
+        $this->logger = $this->createMock(LoggerInterface::class);
 
         $this->folderManager = $this->createMock(FolderManager::class);
 

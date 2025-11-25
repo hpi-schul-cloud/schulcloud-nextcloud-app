@@ -1,7 +1,7 @@
 <?php
 namespace OCA\Schulcloud\Folder;
 
-use OCP\ILogger;
+use Psr\Log\LoggerInterface;
 
 use OCA\GroupFolders\Folder\FolderManager;
 
@@ -12,10 +12,10 @@ class GroupFolderManager {
     /** @var FolderManager from Group Folders*/
     private $folderManager;
 
-    /** @var ILogger */
+    /** @var LoggerInterface */
     private $logger;
 
-    public function __construct(FolderManager $folderManager, ILogger $logger) {
+    public function __construct(FolderManager $folderManager, LoggerInterface $logger) {
         $this->folderManager = $folderManager;
         $this->logger = $logger;
     }

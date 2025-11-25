@@ -4,7 +4,7 @@ namespace OCA\Schulcloud\Listeners;
 use OCP\EventDispatcher\Event;
 use OCP\EventDispatcher\IEventListener;
 use OCP\Group\Events\GroupCreatedEvent;
-use OCP\ILogger;
+use Psr\Log\LoggerInterface;
 
 use OCA\Schulcloud\Folder\GroupFolderManager;
 
@@ -13,10 +13,10 @@ class GroupFolderCreationListener implements IEventListener {
     /** @var GroupFolderManager */
 	private $manager;
 
-    /** @var ILogger */
+    /** @var LoggerInterface */
     private $logger;
 
-	public function __construct(GroupFolderManager $manager, ILogger $logger) {
+	public function __construct(GroupFolderManager $manager, LoggerInterface $logger) {
 		$this->manager = $manager;
         $this->logger = $logger;
 	}

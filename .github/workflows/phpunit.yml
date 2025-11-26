@@ -4,7 +4,7 @@ on: [ push ]
 
 env:
   APP_NAME: schulcloud
-  NEXTCLOUD_VERSION: v26.0.0
+  NEXTCLOUD_VERSION: v31.0.10
 
 permissions:
   contents: read
@@ -17,7 +17,7 @@ jobs:
       # do not stop on another job's failure
       fail-fast: false
       matrix:
-        php-versions: [ '8.2' ]
+        php-versions: [ '8.3' ]
         databases: [ 'pgsql' ]
         testtype: [ 'unit', 'integration' ]
 
@@ -25,7 +25,7 @@ jobs:
 
     services:
       postgres:
-        image: postgres:14
+        image: postgres:17
         ports:
           - 4444:5432/tcp
         env:
@@ -36,19 +36,14 @@ jobs:
 
     steps:
       - name: Checkout server
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
         with:
           repository: nextcloud/server
           ref: ${{ env.NEXTCLOUD_VERSION }}
+          submodules: true
 
-      - name: Checkout submodules
-        shell: bash
-        run: |
-          auth_header="$(git config --local --get http.https://github.com/.extraheader)"
-          git submodule sync --recursive
-          git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
       - name: Checkout app
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
         with:
           path: apps/${{ env.APP_NAME }}
 
@@ -64,7 +59,7 @@ jobs:
         run: echo "::set-output name=dir::$(composer config cache-files-dir)"
 
       - name: Cache composer dependencies
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
           # Use composer.json for key, if composer.lock is not committed.

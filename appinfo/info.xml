@@ -5,14 +5,14 @@
     <name>Schulcloud</name>
     <summary>Automatically creates Group Folders from the Group Folders Plugin</summary>
     <description><![CDATA[Automatically creates Group Folders from the Group Folders Plugin]]></description>
-    <version>0.2.0</version>
+    <version>1.0.0</version>
     <licence>agpl</licence>
     <author>Capcakes</author>
     <namespace>Schulcloud</namespace>
     <category>tools</category>
     <bugs></bugs>
     <dependencies>
-        <nextcloud min-version="12"/>
+        <nextcloud min-version="31"/>
         <lib>curl</lib>
         <lib>SimpleXML</lib>
     </dependencies>
